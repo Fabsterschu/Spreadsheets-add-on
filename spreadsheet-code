@@ -1,0 +1,33 @@
+function onOpen() {
+  console.log ('saved script')
+  var ui = SpreadsheetApp.getUi();
+      ui.createMenu("Fabian's menu")
+      .addItem('First Sussy item', 'menuItem1')
+      .addSeparator()
+      .addSubMenu(ui.createMenu('Sub-menu')
+          .addItem('submenuitem 1', 'menuItem2')
+          .addItem('submenuitem 2', 'menuItem3'))
+      .addToUi();
+}
+
+function menuItem1() {
+  SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
+  var js = " \
+    <script> \
+      window.open('https://ytcutter.net/watch/BA42FJ-NX/', '_blank', 'width=800, height=600'); \
+      google.script.host.close(); \
+    </script> \ ";
+  var html = HtmlService.createHtmlOutput(js)
+    .setHeight(10)
+    .setWidth(100);
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');
+}
+
+function menuItem2() {
+var recipient = Session.getActiveUser().getEmail();
+GmailApp.sendEmail(recipient, 'Mail', 'Kaas');
+}
+
+  function menuItem3() {
+Browser.msgBox('You clicked it!');
+}
