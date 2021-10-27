@@ -17,4 +17,4 @@ just go back to your spreadsheet and look at the menu
 if it doesnt show up just try to run the script again it should work now
 
 
-The original spreadsheet: https://bit.ly/thespreadsheet
+The original spreadsheet: https://bit.ly/theoriginalspreadsheet
