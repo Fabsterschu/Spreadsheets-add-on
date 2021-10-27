@@ -1,1 +1,67 @@
-https://bit.ly/theoriginalspreadsheetandscript/
+function onOpen() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheets()[0];
+  var cell = sheet.getRange('A1:A1');
+  cell.setValue('thx for using my add-on!');
+  console.log ('saved script')
+  var ui = SpreadsheetApp.getUi();
+      ui.createMenu("Fabian's menu")
+      .addItem('First Sussy item', 'menuItem1')
+      .addSeparator()
+      .addSubMenu(ui.createMenu('Sub-menu')
+          .addItem('submenuitem 1', 'menuItem2')
+          .addItem('submenuitem 2', 'menuItem3'))
+      .addToUi();
+}
+
+function menuItem1() {
+  SpreadsheetApp.getUi()
+                  //change the link down below to your own  
+  var js = " \
+    <script> \
+      window.open('https://bit.ly/Sussyimposteroster', '_blank', 'width=800, height=600'); \
+      google.script.host.close(); \
+    </script> \ ";
+  var html = HtmlService.createHtmlOutput(js)
+    .setHeight(10)
+    .setWidth(100);
+    Utilities.sleep (500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading.');
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');;
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading.');
+      Utilities.sleep (500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');
+  Utilities.sleep (250)
+}
+
+function menuItem2() {
+var recipent = Session.getActiveUser().getEmail();
+var mailinput = Browser.inputBox ('What should we send in the email?',Browser.Buttons.OK_CANCEL);
+if (mailinput == 'cancel','none','nothing') {
+  GmailApp.sendEmail (recipent, "Mail", mailinput)
+  return;
+}}
+
+  function menuItem3() {
+SpreadsheetApp.getUi()
+                  //same goes down here
+  var js = " \
+    <script> \
+      window.open('https://oof-4.jimdosite.com', '_blank', 'width=800, height=600'); \
+      google.script.host.close(); \
+    </script> \ ";
+  var html = HtmlService.createHtmlOutput(js)
+    .setHeight(10)
+    .setWidth(100);
+  SpreadsheetApp.getUi().showModalDialog(html, 'This is my website make sure to check it out :)');
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Press F!');
+}
