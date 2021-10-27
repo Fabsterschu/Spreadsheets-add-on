@@ -14,7 +14,7 @@ function menuItem1() {
   SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
   var js = " \
     <script> \
-      window.open('https://ytcutter.net/watch/BA42FJ-NX/', '_blank', 'width=800, height=600'); \
+      window.open('https://bit.ly/Sussyimposteroster', '_blank', 'width=800, height=600'); \
       google.script.host.close(); \
     </script> \ ";
   var html = HtmlService.createHtmlOutput(js)
@@ -24,10 +24,23 @@ function menuItem1() {
 }
 
 function menuItem2() {
-var recipient = Session.getActiveUser().getEmail();
-GmailApp.sendEmail(recipient, 'Mail', 'Kaas');
-}
+var recipent = Session.getActiveUser().getEmail();
+var mailinput = Browser.inputBox ('What should we send in the email?')
+Browser.Buttons.OK_CANCEL;
+if (mailinput == 'cancel','none','nothing') {
+  GmailApp.sendEmail (recipent, "Mail", mailinput)
+  return;
+}}
 
   function menuItem3() {
-Browser.msgBox('You clicked it!');
-}
+SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
+  var js = " \
+    <script> \
+      window.open('https://oof-4.jimdosite.com', '_blank', 'width=800, height=600'); \
+      google.script.host.close(); \
+    </script> \ ";
+  var html = HtmlService.createHtmlOutput(js)
+    .setHeight(10)
+    .setWidth(100);
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');
+  }
