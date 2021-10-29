@@ -1,17 +1,22 @@
 function onOpen() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheets()[0];
-  var cell = sheet.getRange('A1:A1');
+  var cell = sheet.getRange('A:A');
   cell.setValue('thx for using my add-on!');
+  //till this after the first run
   console.log ('saved script')
   var ui = SpreadsheetApp.getUi();
       ui.createMenu("Fabian's menu")
       .addItem('First Sussy item', 'menuItem1')
+      .addItem('Close Program', 'menuItem5')
       .addSeparator()
       .addSubMenu(ui.createMenu('Sub-menu')
           .addItem('submenuitem 1', 'menuItem2')
-          .addItem('submenuitem 2', 'menuItem3'))
+          .addItem('submenuitem 2', 'menuItem3')
+          .addItem('Kaas Song remix', 'menuItem4'))
       .addToUi();
+      console.log('Uploaded script to spreadsheet')
+      var newcellvaluethingy = sheet.getRange('C1:U')
 }
 
 function menuItem1() {
@@ -32,23 +37,20 @@ function menuItem1() {
   Utilities.sleep(500)
   SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');;
   Utilities.sleep(500)
-  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
-  Utilities.sleep(500)
   SpreadsheetApp.getUi().showModalDialog(html, 'Now loading.');
-      Utilities.sleep (500)
-  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
   Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Now loading..');
+  Utilities.sleep (500)
   SpreadsheetApp.getUi().showModalDialog(html, 'Now loading...');
-  Utilities.sleep (250)
+  Utilities.sleep(500)
 }
 
 function menuItem2() {
 var recipent = Session.getActiveUser().getEmail();
-var mailinput = Browser.inputBox ('What should we send in the email?',Browser.Buttons.OK_CANCEL);
-if (mailinput == 'cancel','none','nothing') {
+var mailinput = Browser.inputBox ('What should we send in the email?',Browser.Buttons.YES_NO);
   GmailApp.sendEmail (recipent, "Mail", mailinput)
   return;
-}}
+}
 
   function menuItem3() {
 SpreadsheetApp.getUi()
@@ -65,3 +67,32 @@ SpreadsheetApp.getUi()
   Utilities.sleep(500)
   SpreadsheetApp.getUi().showModalDialog(html, 'Press F!');
 }
+
+function menuItem4() {
+  SpreadsheetApp.getUi()
+              //and here. but you shouldn't cuz this is awesome
+  var js = " \
+  <script> \
+  window.open('https://www.youtube.com/watch?v=jkxBTr0_a9A','_blank', 'width=800, height=600'); \
+  google.script.host.close(); \
+  </script> \ ";
+  var html = HtmlService.createHtmlOutput(js)
+  .setHeight(10)
+  .setWidth(100)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Best song ever!!!')
+  Utilities.sleep(500)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Press F!')
+}
+function menuItem5() {
+  var html = HtmlService.createHtmlOutput()
+  .setHeight(10)
+  .setWidth(100)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Press Ctrl+W!')
+  Utilities.sleep(5000)
+  SpreadsheetApp.getUi().showModalDialog(html, 'u Dumbass')
+  Utilities.sleep(100)
+  SpreadsheetApp.getUi().showModalDialog(html, 'Press Ctrl+W!')
+  newcellvaluethingy.setValue('Sup this is the script although it isnt online it is in the new script im working on (its just a joke btw)')
+  Utitlities.sleep(5000)
+  newcellvaluethingy.setValue('');
+  }
